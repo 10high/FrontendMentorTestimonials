@@ -1,0 +1,310 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of CSS reset */
+
+html {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+/*Mobile first */
+
+:root {
+	--violet: hsl(263, 55%, 52%);
+	--white-font-solid: hsl(0, 0%, 100%);
+	--white-font-status: hsl(0, 0%, 100%, 0.5);
+	--white-font-quote: hsl(0, 0%, 100%, 0.7);
+	--black-font-solid: hsl(217, 19%, 35%);
+	--black-font-status: hsla(217, 19%, 35%, 0.5);
+	--black-font-quote: hsla(217, 19%, 35%, 0.7);
+
+}
+
+body {
+display: flex;
+min-height: 100vh;
+justify-content: center;
+align-items: center;
+background-color: hsl(210, 46%, 95%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	margin-top: 5.5em;
+	margin-bottom: 3em;
+}
+
+.gridgeneric {
+	display: grid;
+	max-width: 329px;
+	border-radius: 0.65em;
+	grid-template-columns: 2.52em 3.5em auto 2.55em;
+	grid-template-rows: 2em 1.3em 1.1em 1.15em auto 1.1em auto 2.3em;
+	grid-template-areas: 
+		". 	. 		. 		."
+		". 	pic 	name 	."
+		". 	. 		status 	."
+		". 	. 		. 		."
+		". 	splash 	splash 	."
+		". 	. 		. 		."
+		". 	quote 	quote 	."
+		". 	. 		. 		.";
+	
+	}
+
+.gridgeneric img { /*Profile Pics*/
+	grid-area: pic;
+	grid-row: 2 / 4;
+	max-height: 2.15em;
+	border-radius: 50%;
+	justify-self: start;
+	align-self: start;
+	margin-top: -3px;
+	
+}
+
+.gridgeneric h2 { /*Name */
+	grid-area: name;
+	font-size: 1em;
+	
+	
+}
+
+.gridgeneric h3 { /*Status */
+	grid-area: status;
+	font-size: 0.85em;
+}
+
+.gridgeneric p { /*Splash */
+	grid-area: splash;
+	font-weight: 600;
+	font-size: 1.55em;
+	line-height: 1.2;
+	
+}
+
+.gridgeneric q { /*Quote */
+	grid-area: quote;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+.daniel h2, .jonathan h2, .patrick h2 { /*Names*/
+	color: var(--white-font-solid);
+}
+
+.daniel h3, .jonathan h3, .patrick h3 { /*statuses*/
+	color: var(--white-font-status)
+}
+
+.daniel p, .jonathan p, .patrick p { /*splashes*/
+	color: var(--white-font-solid);
+}
+
+.daniel q, .jonathan q, .patrick q { /*quotes*/
+	color: var(--white-font-quote);
+}
+
+.jeanette h2, .kira h2 { /*Names*/
+	color: var(--black-font-solid);
+}
+
+.jeanette h3, .kira h3 { /*statuses*/
+	color: var(--black-font-status);
+}
+
+.jeanette p, .kira p { /*Splashes*/
+color: var(--black-font-solid);
+}
+
+.jeanette q, .kira q { /*quotes*/
+	color: var(--black-font-quote);
+}
+
+.daniel { /*Daniel Background */
+	background-image: url(images/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-position: 89% 0%;
+	background-color: var(--violet);
+}
+
+.daniel img { /*Daniel Profile Pic */
+border-style: solid;	
+border-width: 2px;
+border-color: hsla(0, 0%, 100%, 0.308);
+}
+
+.jonathan {
+	background-color: var(--black-font-solid);
+}
+
+.jeanette {
+	background-color: var(--white-font-solid);
+}
+
+.patrick {
+	background-color: hsl(219, 29%, 14%);
+}
+
+.patrick img { /*Patrick Profile Pic */  
+	border-style: solid;	
+	border-width: 2px;
+	border-color: var(--violet);
+}
+
+.kira {
+	background-color: var(--white-font-solid);
+}
+
+/*Transition between mobile and full desktop */
+@media (min-width: 400px) {
+	main {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
+		max-width: 90vw;
+		
+		
+	}
+
+	.gridgeneric {
+		max-width: 450px;
+	}
+
+
+	.daniel {
+		order: 1;
+		
+	}
+
+	.patrick {
+		order: 2;
+
+	}
+
+	.jonathan {
+		order: 3;
+	}
+
+	.jeanette {
+		order: 4;
+	}
+
+	.kira {
+		order: 5;
+	}
+}
+
+
+/* Full Desktop Version */
+@media (min-width: 1150px) {
+	
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+		"daniel		daniel 		jonathan 		kira "
+		"jeanette	patrick 	patrick 		kira ";
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+
+	.gridgeneric img { /*Profile pics */
+		margin-top: 0;
+	}
+
+	.daniel, .patrick {
+		max-width: 42em;
+	}
+
+	.jonathan, .kira, .jeanette {
+		max-width: 20em;
+	}
+
+	.kira, .jeanette, .patrick { /*adjusts bottom two spacer rows to align text */
+		grid-template-rows: 2em 1.3em 1.1em 1.15em auto 1.9em auto 1.9em;
+	}
+
+	.daniel {
+		grid-area: daniel;
+		background-position: 81% 0%;
+		
+	}
+
+	.jonathan {
+		grid-area: jonathan;
+		
+	}
+
+	.jeanette {
+		grid-area: jeanette;
+		
+	}
+
+	.patrick {
+		grid-area: patrick;
+		
+	}
+
+	.kira {
+		grid-area: kira;
+		
+	}
+
+}
