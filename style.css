@@ -50,8 +50,8 @@ table {
 
 html {
 	font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size: 13px;
-    box-sizing: border-box;
+	font-size: 13px;
+	box-sizing: border-box;
 }
 
 /*Mobile first */
@@ -68,21 +68,31 @@ html {
 }
 
 body {
-display: flex;
-min-height: 100vh;
-justify-content: center;
-align-items: center;
-background-color: hsl(210, 46%, 95%);
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(210, 46%, 95%);
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+    	display: flex;
+    	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 2em;
 	margin-top: 5.5em;
 	margin-bottom: 3em;
+}
+
+.sr-only {
+	position: absolute;
+	margin: -1px;
+	clip-path: inset (50%);
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .gridgeneric {
@@ -166,7 +176,7 @@ main {
 }
 
 .jeanette p, .kira p { /*Splashes*/
-color: var(--black-font-solid);
+	color: var(--black-font-solid);
 }
 
 .jeanette q, .kira q { /*quotes*/
@@ -181,9 +191,9 @@ color: var(--black-font-solid);
 }
 
 .daniel img { /*Daniel Profile Pic */
-border-style: solid;	
-border-width: 2px;
-border-color: hsla(0, 0%, 100%, 0.308);
+	border-style: solid;	
+	border-width: 2px;
+	border-color: hsla(0, 0%, 100%, 0.308);
 }
 
 .jonathan {
@@ -217,8 +227,6 @@ border-color: hsla(0, 0%, 100%, 0.308);
 		align-items: flex-start;
 		justify-content: center;
 		max-width: 90vw;
-		
-		
 	}
 
 	.gridgeneric {
@@ -227,13 +235,11 @@ border-color: hsla(0, 0%, 100%, 0.308);
 
 
 	.daniel {
-		order: 1;
-		
+		order: 1;	
 	}
 
 	.patrick {
 		order: 2;
-
 	}
 
 	.jonathan {
@@ -252,12 +258,11 @@ border-color: hsla(0, 0%, 100%, 0.308);
 
 /* Full Desktop Version */
 @media (min-width: 1150px) {
-	
 	main {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: 
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: 
 		"daniel		daniel 		jonathan 		kira "
 		"jeanette	patrick 	patrick 		kira ";
 		margin-top: 0;
